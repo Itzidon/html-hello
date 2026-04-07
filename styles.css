@@ -15,6 +15,7 @@ body {
   line-height: 1.6;
 }
 
+/* HERO */
 .hero {
   min-height: 100vh;
   background: linear-gradient(135deg, #111111, #3a1c71, #d76d77);
@@ -24,12 +25,19 @@ body {
   padding: 20px 40px;
 }
 
+/* NAV */
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  background: rgba(17, 17, 17, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 15px 0;
+  z-index: 1000;
 }
 
 .logo {
@@ -47,16 +55,31 @@ body {
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-.nav-links a:hover {
-  text-decoration: underline;
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: width 0.3s ease;
 }
 
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* HERO CONTENT */
 .hero-content {
   max-width: 700px;
   margin: auto 0;
   padding: 60px 0;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .hero-content h1 {
@@ -69,6 +92,15 @@ body {
   margin-bottom: 25px;
 }
 
+.hero-image {
+  width: 100%;
+  max-width: 320px;
+  margin: 25px 0;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* BUTTON */
 .btn {
   display: inline-block;
   background-color: #ffffff;
@@ -78,12 +110,15 @@ body {
   border-radius: 8px;
   font-weight: bold;
   transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 .btn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.02);
+  opacity: 0.95;
 }
 
+/* SECTIONS */
 .section {
   min-height: 100vh;
   display: flex;
@@ -103,6 +138,11 @@ body {
   padding: 30px;
   border-radius: 14px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.content-box:hover {
+  transform: translateY(-5px);
 }
 
 .content-box h2 {
@@ -119,6 +159,7 @@ body {
   padding-left: 20px;
 }
 
+/* FOOTER */
 .footer {
   text-align: center;
   padding: 20px;
@@ -126,7 +167,19 @@ body {
   color: #cccccc;
 }
 
-/* 📱 RESPONSIVE */
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .hero {
     padding: 20px;
