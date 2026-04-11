@@ -13,6 +13,7 @@ body {
   background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
   color: #f8fafc;
   line-height: 1.6;
+  margin: 0;
 }
 
 img {
@@ -167,6 +168,7 @@ a {
   border-radius: 999px;
   font-weight: bold;
   transition: transform 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
 }
 
 .btn:hover,
@@ -190,12 +192,17 @@ h2 {
 /* LIST */
 .events-list {
   margin-top: 18px;
-  padding-left: 20px;
+  padding-left: 0;
+  list-style: none;
 }
 
 .events-list li {
   margin-bottom: 12px;
   color: #f8fafc;
+  padding: 14px 18px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
 }
 
 /* CONTACT */
@@ -235,7 +242,7 @@ h2 {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* ACCESSIBILITY (IMPORTANTE para nota alta) */
+/* ACCESSIBILITY */
 a:focus-visible,
 button:focus-visible {
   outline: 3px solid #fbbf24;
